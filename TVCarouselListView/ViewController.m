@@ -26,23 +26,45 @@
     
     manager = [CarouselManager sharedManager];
     carouselList = [NSMutableArray new];
-    for (int i = 0; i < 4; i++) {
+    for (int i = 0; i < 5; i++) {
         CarouselContent *carouselContent = [CarouselContent new];
-        carouselContent.title = [NSString stringWithFormat:@"Carousel %d", i];
+        switch (i) {
+            case 0:
+                carouselContent.title = @"Featured";
+                break;
+            case 1:
+                carouselContent.title = @"Popular";
+                break;
+            case 2:
+                carouselContent.title = @"Entertainment";
+                break;
+            case 3:
+                carouselContent.title = @"Gaming";
+                break;
+            case 4:
+                carouselContent.title = @"Music";
+                break;
+            case 5:
+                carouselContent.title = @"Others";
+                break;
+            default:
+                carouselContent.title = [NSString stringWithFormat:@"Carousel %d", i];
+                break;
+        }
         carouselContent.videos = @[
-                                    @{ @"title": @"Title 0", @"description": @"Description 0", @"photo": @"0" },
-                                    @{ @"title": @"Title 1", @"description": @"Description 1", @"photo": @"1" },
-                                    @{ @"title": @"Title 2", @"description": @"Description 2", @"photo": @"2" },
-                                    @{ @"title": @"Title 3", @"description": @"Description 3", @"photo": @"3" },
-                                    @{ @"title": @"Title 4", @"description": @"Description 4", @"photo": @"4" },
-                                    @{ @"title": @"Title 5", @"description": @"Description 5", @"photo": @"5" },
-                                    @{ @"title": @"Title 6", @"description": @"Description 6", @"photo": @"6" },
-                                    @{ @"title": @"Title 7", @"description": @"Description 7", @"photo": @"7" },
-                                    @{ @"title": @"Title 8", @"description": @"Description 8", @"photo": @"8" },
-                                    @{ @"title": @"Title 9", @"description": @"Description 9", @"photo": @"9" },
-                                    @{ @"title": @"Title 10", @"description": @"Description 10", @"photo": @"10" },
-                                    @{ @"title": @"Title 11", @"description": @"Description 11", @"photo": @"11" },
-                                    @{ @"title": @"Title 12", @"description": @"Description 12", @"photo": @"12" }
+                                    @{ @"title": @"Video 1", @"description": @"Video description 0", @"photo": @"0" },
+                                    @{ @"title": @"Video 1", @"description": @"Video description 1", @"photo": @"1" },
+                                    @{ @"title": @"Video 1", @"description": @"Video description 2", @"photo": @"2" },
+                                    @{ @"title": @"Video 1", @"description": @"Video description 3", @"photo": @"3" },
+                                    @{ @"title": @"Video 4", @"description": @"Video description 4", @"photo": @"4" },
+                                    @{ @"title": @"Video 5", @"description": @"Video description 5", @"photo": @"5" },
+                                    @{ @"title": @"Video 6", @"description": @"Video description 6", @"photo": @"6" },
+                                    @{ @"title": @"Video 7", @"description": @"Video description 7", @"photo": @"7" },
+                                    @{ @"title": @"Video 8", @"description": @"Video description 8", @"photo": @"8" },
+                                    @{ @"title": @"Video 9", @"description": @"Video description 9", @"photo": @"9" },
+                                    @{ @"title": @"Video 10", @"description": @"Video description 10", @"photo": @"10" },
+                                    @{ @"title": @"Video 11", @"description": @"Video description 11", @"photo": @"11" },
+                                    @{ @"title": @"Video 12", @"description": @"Video description 12", @"photo": @"12" }
                                 ];
         [carouselList addObject:carouselContent];
     }
