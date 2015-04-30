@@ -14,6 +14,10 @@
 		1B9FDE331AF10D9100CCCD4C /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1B9FDE321AF10D9100CCCD4C /* Images.xcassets */; };
 		1B9FDE361AF10D9100CCCD4C /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1B9FDE341AF10D9100CCCD4C /* LaunchScreen.xib */; };
 		1B9FDE421AF10D9100CCCD4C /* TVCarouselListViewTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9FDE411AF10D9100CCCD4C /* TVCarouselListViewTests.m */; };
+		1B9FDE4E1AF10EBE00CCCD4C /* CarouselView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9FDE4D1AF10EBE00CCCD4C /* CarouselView.m */; };
+		1B9FDE511AF10ED100CCCD4C /* CarouselManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9FDE501AF10ED100CCCD4C /* CarouselManager.m */; };
+		1B9FDE541AF10F6D00CCCD4C /* CarouselCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9FDE531AF10F6D00CCCD4C /* CarouselCell.m */; };
+		1B9FDE591AF11A9400CCCD4C /* CarouselContent.m in Sources */ = {isa = PBXBuildFile; fileRef = 1B9FDE581AF11A9400CCCD4C /* CarouselContent.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +44,14 @@
 		1B9FDE3B1AF10D9100CCCD4C /* TVCarouselListViewTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVCarouselListViewTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1B9FDE401AF10D9100CCCD4C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1B9FDE411AF10D9100CCCD4C /* TVCarouselListViewTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TVCarouselListViewTests.m; sourceTree = "<group>"; };
+		1B9FDE4C1AF10EBE00CCCD4C /* CarouselView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselView.h; sourceTree = "<group>"; };
+		1B9FDE4D1AF10EBE00CCCD4C /* CarouselView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselView.m; sourceTree = "<group>"; };
+		1B9FDE4F1AF10ED100CCCD4C /* CarouselManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselManager.h; sourceTree = "<group>"; };
+		1B9FDE501AF10ED100CCCD4C /* CarouselManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselManager.m; sourceTree = "<group>"; };
+		1B9FDE521AF10F6D00CCCD4C /* CarouselCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselCell.h; sourceTree = "<group>"; };
+		1B9FDE531AF10F6D00CCCD4C /* CarouselCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselCell.m; sourceTree = "<group>"; };
+		1B9FDE571AF11A9400CCCD4C /* CarouselContent.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CarouselContent.h; sourceTree = "<group>"; };
+		1B9FDE581AF11A9400CCCD4C /* CarouselContent.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CarouselContent.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +72,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1B3E8CCA1AF1F66200CAD0A1 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1B9FDE571AF11A9400CCCD4C /* CarouselContent.h */,
+				1B9FDE581AF11A9400CCCD4C /* CarouselContent.m */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
 		1B9FDE191AF10D9100CCCD4C = {
 			isa = PBXGroup;
 			children = (
@@ -81,6 +102,8 @@
 		1B9FDE241AF10D9100CCCD4C /* TVCarouselListView */ = {
 			isa = PBXGroup;
 			children = (
+				1B3E8CCA1AF1F66200CAD0A1 /* Model */,
+				1B9FDE551AF1127600CCCD4C /* CarouselCell */,
 				1B9FDE291AF10D9100CCCD4C /* AppDelegate.h */,
 				1B9FDE2A1AF10D9100CCCD4C /* AppDelegate.m */,
 				1B9FDE2C1AF10D9100CCCD4C /* ViewController.h */,
@@ -117,6 +140,19 @@
 				1B9FDE401AF10D9100CCCD4C /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		1B9FDE551AF1127600CCCD4C /* CarouselCell */ = {
+			isa = PBXGroup;
+			children = (
+				1B9FDE521AF10F6D00CCCD4C /* CarouselCell.h */,
+				1B9FDE531AF10F6D00CCCD4C /* CarouselCell.m */,
+				1B9FDE4C1AF10EBE00CCCD4C /* CarouselView.h */,
+				1B9FDE4D1AF10EBE00CCCD4C /* CarouselView.m */,
+				1B9FDE4F1AF10ED100CCCD4C /* CarouselManager.h */,
+				1B9FDE501AF10ED100CCCD4C /* CarouselManager.m */,
+			);
+			name = CarouselCell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -221,7 +257,11 @@
 			files = (
 				1B9FDE2E1AF10D9100CCCD4C /* ViewController.m in Sources */,
 				1B9FDE2B1AF10D9100CCCD4C /* AppDelegate.m in Sources */,
+				1B9FDE4E1AF10EBE00CCCD4C /* CarouselView.m in Sources */,
 				1B9FDE281AF10D9100CCCD4C /* main.m in Sources */,
+				1B9FDE511AF10ED100CCCD4C /* CarouselManager.m in Sources */,
+				1B9FDE591AF11A9400CCCD4C /* CarouselContent.m in Sources */,
+				1B9FDE541AF10F6D00CCCD4C /* CarouselCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -416,6 +456,7 @@
 				1B9FDE471AF10D9100CCCD4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		1B9FDE481AF10D9100CCCD4C /* Build configuration list for PBXNativeTarget "TVCarouselListViewTests" */ = {
 			isa = XCConfigurationList;
@@ -424,6 +465,7 @@
 				1B9FDE4A1AF10D9100CCCD4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

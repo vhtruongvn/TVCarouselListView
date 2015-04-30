@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  PhotoCarousel.h
 //  TVCarouselListView
 //
 //  Created by Ray Vo on 29/4/15.
@@ -8,11 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@class CarouselCell;
-
-@interface ViewController : UIViewController
-
-- (void)loadVisibleImagesForCell:(CarouselCell *)cell;
+@interface CarouselView : UIScrollView
 
 @end
-

@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6211" systemVersion="14A298i" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7702" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="vXZ-lx-hvc">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6204"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7701"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
-                <viewController id="vXZ-lx-hvc" customClass="ViewController" customModuleProvider="" sceneMemberID="viewController">
+                <viewController id="vXZ-lx-hvc" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="jyV-Pf-zRb"/>
                         <viewControllerLayoutGuide type="bottom" id="2fi-mo-0CV"/>
@@ -15,8 +16,65 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UgC-rp-Xxn">
+                                <rect key="frame" x="0.0" y="20" width="600" height="44"/>
+                                <items>
+                                    <navigationItem title="TVCarouselListView Demo" id="y4m-At-iOe"/>
+                                </items>
+                            </navigationBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="co9-i7-KIQ">
+                                <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="CarouselCell" rowHeight="235" id="YEP-we-PnU" customClass="CarouselCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YEP-we-PnU" id="aCD-zj-53N">
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sT8-ck-VcW" customClass="CarouselView">
+                                                    <rect key="frame" x="8" y="8" width="584" height="219"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="219" id="rOS-Nf-YOL"/>
+                                                    </constraints>
+                                                    <connections>
+                                                        <outlet property="delegate" destination="YEP-we-PnU" id="Mfl-p8-s1P"/>
+                                                    </connections>
+                                                </scrollView>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="sT8-ck-VcW" firstAttribute="trailing" secondItem="aCD-zj-53N" secondAttribute="trailingMargin" id="7kV-ix-iqY"/>
+                                                <constraint firstItem="sT8-ck-VcW" firstAttribute="bottom" secondItem="aCD-zj-53N" secondAttribute="bottomMargin" id="DqT-xh-5Rc"/>
+                                                <constraint firstItem="sT8-ck-VcW" firstAttribute="leading" secondItem="aCD-zj-53N" secondAttribute="leadingMargin" id="cwo-eh-W6L"/>
+                                                <constraint firstItem="sT8-ck-VcW" firstAttribute="top" secondItem="aCD-zj-53N" secondAttribute="topMargin" id="yom-E4-Dzk"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="carouselView" destination="sT8-ck-VcW" id="gpp-e9-9Gh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="vXZ-lx-hvc" id="3MY-Sj-R21"/>
+                                    <outlet property="delegate" destination="vXZ-lx-hvc" id="xjX-Zo-Imh"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="co9-i7-KIQ" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="3yc-PF-o28"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="co9-i7-KIQ" secondAttribute="trailing" constant="-16" id="73G-9R-Uht"/>
+                            <constraint firstItem="UgC-rp-Xxn" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" id="ar3-sA-lNM"/>
+                            <constraint firstItem="UgC-rp-Xxn" firstAttribute="leading" secondItem="kh9-bI-dsS" secondAttribute="leadingMargin" constant="-16" id="czK-FR-ise"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UgC-rp-Xxn" secondAttribute="trailing" constant="-16" id="gCT-Ua-3vA"/>
+                            <constraint firstItem="2fi-mo-0CV" firstAttribute="top" secondItem="co9-i7-KIQ" secondAttribute="bottom" id="mv4-ba-izu"/>
+                            <constraint firstItem="co9-i7-KIQ" firstAttribute="top" secondItem="jyV-Pf-zRb" secondAttribute="bottom" constant="44" id="tCJ-Tc-taC"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="co9-i7-KIQ" id="KeZ-7F-UYk"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
